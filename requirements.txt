@@ -1,1 +1,24 @@
-fastapi[all]
+aiohappyeyeballs==2.4.3
+aiohttp==3.10.10
+aiosignal==1.3.1
+annotated-types==0.7.0
+anyio==4.6.1
+attrs==24.2.0
+click==8.1.7
+colorama==0.4.6
+fastapi==0.115.2
+frozenlist==1.4.1
+h11==0.14.0
+idna==3.10
+multidict==6.1.0
+propcache==0.2.0
+pydantic==2.9.2
+pydantic_core==2.23.4
+pyodbc @ git+https://github.com/mkleehammer/pyodbc@e3149c8a93c420cee6b12bf9080a8f14d87283cd
+setuptools==75.1.0
+sniffio==1.3.1
+starlette==0.39.2
+typing_extensions==4.12.2
+uvicorn==0.31.1
+wheel==0.44.0
+yarl==1.15.0

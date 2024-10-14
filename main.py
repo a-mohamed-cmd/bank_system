@@ -45,6 +45,10 @@ def get_connection():
     conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={DatabaseConfig.server};DATABASE={DatabaseConfig.database};UID={DatabaseConfig.username};PWD={DatabaseConfig.password}'
     return odb.connect(conn_str)
 
+app.get('/hi')
+def sayhi():
+    return ("hi")
+
 # دالة لاسترجاع السجلات
 @app.get('/record', response_model=List[Record])
 async def read_records():

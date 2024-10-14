@@ -3,6 +3,9 @@ from fastapi import FastAPI
 from datetime import datetime
 from pydantic import BaseModel
 from typing import Optional, List
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 # إعدادات الاتصال
 class DatabaseConfig:
@@ -31,7 +34,12 @@ class Record(BaseModel):
     Check_out: Optional[datetime]
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # يمكنك تحديد المواقع المسموح بها
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],)
 # دالة للاتصال بقاعدة البيانات
 def get_connection():
     conn_str = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={DatabaseConfig.server};DATABASE={DatabaseConfig.database};UID={DatabaseConfig.username};PWD={DatabaseConfig.password}'
